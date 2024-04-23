@@ -1,0 +1,10 @@
+.events-container {
+  display: grid;
+  grid-template-columns: 1fr 70%;
+  column-gap: 2rem;
+}
+
+.event-item {
+  display: grid;
+  grid-template-columns: 35% 1fr 1fr 1fr;
+}

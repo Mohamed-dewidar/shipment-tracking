@@ -1,0 +1,30 @@
+/* .progress-bar li:not(:last-child)::after {
+  content: ' ';
+  background-color: red;
+  display: inline;
+  width: 90%;
+  height: 6px;
+  margin: 0px -30px 0 -20px;
+  z-index: -1;
+} */
+
+.progress-bar li:not(:last-child) {
+  flex: 1 1 0%;
+  display: grid;
+  grid-template-columns: 25% 1fr;
+}
+
+.is-canceled {
+  background-color: red;
+  color: red;
+}
+
+.is-delivered {
+  background-color: green;
+  color: green;
+}
+
+.is-back-sender {
+  background-color: rgb(245 158 11);
+  color: rgb(245 158 11);
+}
