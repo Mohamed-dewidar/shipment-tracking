@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { LocaleContext } from '../../context/LocaleContext';
+import { colorStateMap } from '../../features/progress';
 
 export default function ShipmentEvents({ shipment }) {
   const { locale, layout } = useContext(LocaleContext);
@@ -34,7 +35,18 @@ export default function ShipmentEvents({ shipment }) {
                 index !== shipment.transitEvents.length - 1 && 'border-b'
               }`}
             >
-              <p className="hidden md:block">{event.eventState}</p>
+              <div className="flex flex-col hidden md:block">
+                <p>{event.eventState}</p>
+                {event.note && (
+                  <p
+                    className={`${
+                      colorStateMap[shipment.progressBarState]
+                    } bg-white`}
+                  >
+                    {event.note}
+                  </p>
+                )}
+              </div>
               <p className="hidden md:block">{event.time}</p>
               <p className="hidden md:block">{event.date}</p>
               <p className="hidden md:block">{event.location}</p>

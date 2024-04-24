@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useContext } from 'react';
 import { LocaleContext } from '../context/LocaleContext';
+import { mapShippingNote } from './progress';
 
 let shipmentDateENG = '';
 let deliveryDateENG = '';
@@ -99,6 +100,7 @@ function mapTransitEvents(apiItem, locale) {
   return apiItem.map((item) => ({
     eventState: mapTransitState(item.state, locale),
     location: locale === 'en' ? 'Nasr City' : 'مدينه نصر',
+    note: mapShippingNote(item.state, locale),
     date: item.timestamp
       ? new Date(item.timestamp).toLocaleDateString(
           locale === 'en' ? 'en-US' : 'ar-EG',

@@ -32,12 +32,14 @@ export default function Header() {
             }
             width="150px"
             alt="bosta logo"
-            className="object-cover"
+            className="object-cover cursor-pointer"
             onClick={goHome}
           />
 
           <ul className={`gap-x-12 ${layout}`}>
-            <li onClick={goHome}>{locale === 'en' ? 'Main' : 'الرئيسيه'}</li>
+            <li className="cursor-pointer" onClick={goHome}>
+              {locale === 'en' ? 'Main' : 'الرئيسيه'}
+            </li>
             <li>{locale === 'en' ? 'Prices' : 'الاسعار'}</li>
             <li>{locale === 'en' ? 'Contact Us' : 'كلم المبيعات'}</li>
           </ul>
@@ -67,12 +69,14 @@ export default function Header() {
           }
           width="70px"
           alt="bosta logo"
-          className="mx-auto object-cover"
+          className="mx-auto object-cover cursor-pointer"
           onClick={goHome}
         />
 
         <p className="flex flex-col gap-y-6 font-bold">
-          <span onClick={goHome}>{locale === 'en' ? 'Main' : 'الرئيسيه'}</span>
+          <span className="cursor-pointer" onClick={goHome}>
+            {locale === 'en' ? 'Main' : 'الرئيسيه'}
+          </span>
           <span>{locale === 'en' ? 'Prices' : 'الاسعار'}</span>
           <span>{locale === 'en' ? 'Contact Us' : 'كلم المبيعات'}</span>
         </p>
