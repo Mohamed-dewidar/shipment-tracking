@@ -89,6 +89,7 @@ export function mapLocales(shipment, locale) {
         )
       : undefined,
     transitEvents: mapTransitEvents(shipmentENG.TransitEvents, locale),
+    title: mapTransitState(shipment.state, locale),
   };
 }
 
@@ -137,7 +138,7 @@ function mapTransitState(apiItem, locale) {
     NOT_YET_SHIPPED: 'لم يتم شحنه بعد',
     DELIVERED_TO_SENDER: 'سلمت إلى المرسل',
     CANCELLED: 'تم الالغاء',
-    DELIVERED: 'تم النوصيل',
+    DELIVERED: 'تم التوصيل',
   };
 
   return locale === 'en' ? eventStateMapENG[apiItem] : eventStateMapAR[apiItem];

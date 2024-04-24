@@ -66,7 +66,6 @@ export default function Header() {
             locale === 'en' ? '/images/bosta-en.png' : '/images/bosta-ar.png'
           }
           width="70px"
-          height="50px"
           alt="bosta logo"
           className="mx-auto object-cover"
           onClick={goHome}

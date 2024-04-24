@@ -11,6 +11,7 @@ export default function ShipmentDetails({ shipment, setShipment }) {
 
   useEffect(() => {
     setShipment(mapLocales(shipment, locale));
+    console.log(shipment);
   }, [locale]);
 
   return (
@@ -25,11 +26,11 @@ export default function ShipmentDetails({ shipment, setShipment }) {
               : `رقم الشحنه #${shipment.trackingNumber}`}
           </span>
           <span
-            className={`font-bold text-lg ${
-              colorStateMap[shipment.state]
-            } bg-white`}
+            className={`font-bold text-lg
+            ${locale === 'en' ? 'text-left' : 'text-right'}
+            ${colorStateMap[shipment.state]} bg-white`}
           >
-            {shipment.state}
+            {shipment.title}
           </span>
         </p>
 
@@ -69,7 +70,7 @@ export default function ShipmentDetails({ shipment, setShipment }) {
               colorStateMap[shipment.state]
             } bg-white`}
           >
-            {shipment.state}
+            {shipment.title}
           </span>
         </p>
 
