@@ -49,7 +49,9 @@ export function mapShippingNote(state, locale) {
 
   if (state === 'CANCELLED') {
     shippingNote =
-      locale === 'en' ? 'Order was cancelled' : 'تم الغاء الشحنه من التاجر';
+      locale === 'en'
+        ? 'Order was cancelled by seller'
+        : 'تم الغاء الشحنه من التاجر';
   }
   return shippingNote;
 }

@@ -14,12 +14,13 @@ export default function Progress({ shipment }) {
 
   useEffect(() => {
     setCurrent(steps.findIndex((step) => step === shipment.progressBarState));
+    console.log();
   }, [shipment, locale]);
 
   return (
     <>
       <ul
-        className={`progress-bar container mx-auto h-28 flex items-stretch px-4 pb-10 border-2 border-t-0 border-gray-100 rounded-b-md ${
+        className={`hidden progress-bar container mx-auto h-28 md:flex items-stretch px-4 pb-10 border border-t-0 border-gray-100 rounded-b-md ${
           locale === 'en' ? 'text-left' : 'text-right'
         }`}
       >
@@ -72,6 +73,21 @@ export default function Progress({ shipment }) {
           </li>
         ))}
       </ul>
+
+      {steps[current] && (
+        <div
+          className={`flex flex-col md:hidden p-5 mx-5 border border-t-0 border-gray-100 rounded-b-md ${
+            locale === 'en' ? 'text-left' : 'text-right'
+          }`}
+        >
+          <p className="font-bold"> {progressData[steps[current]].title}</p>
+          {progressData[steps[current]].note && (
+            <p className={`${colorStateMap[shipment.state]} bg-white`}>
+              {progressData[steps[current]].note}
+            </p>
+          )}
+        </div>
+      )}
     </>
   );
 }

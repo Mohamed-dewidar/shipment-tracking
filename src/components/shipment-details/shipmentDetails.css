@@ -1,10 +1,23 @@
 .events-container {
   display: grid;
-  grid-template-columns: 1fr 70%;
-  column-gap: 2rem;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
 }
 
 .event-item {
   display: grid;
-  grid-template-columns: 35% 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .events-container {
+    display: grid;
+    grid-template-columns: 1fr 70%;
+    column-gap: 2rem;
+  }
+
+  .event-item {
+    display: grid;
+    grid-template-columns: 35% 1fr 1fr 1fr;
+  }
 }

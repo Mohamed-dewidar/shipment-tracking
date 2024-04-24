@@ -1,37 +1,21 @@
- 
-/* CsS variables */
-
-:root{
-    --dark-orange: rgb(241 100 30);
-}
-
-html {
-  font-size: 10px;
-}
- 
 /* reset everything */
 
-*, *::before,*::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 * {
   margin: 0;
   padding: 0;
-
 }
 
-body {
-  min-height: 100vh;
-  overflow-x: hidden;
- 
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
 }
-
-img{
-    max-width: 100%;
-    display: block;
-}
-
 
 /* inherit fonts for inputs and buttons */
 input,
@@ -43,14 +27,13 @@ select {
   color: inherit;
 }
 
-
 a {
   cursor: pointer;
   color: inherit;
 }
 
 /* reset heading style */
-/* 
+
 h1,
 h2,
 h3,
@@ -59,33 +42,10 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
-} */
+}
 
 /* reset list style */
-ol, ul {
+ol,
+ul {
   list-style: none;
-}
-
-
-
-@media  screen and (min-width: 500px) {
-  html{
-    font-size: 12px;
-  }
-  
-}
-
-
-@media  screen and (min-width: 800px) {
-  html{
-    font-size: 14px;
-  }
-  
-}
-
-@media  screen and (min-width: 1200px) {
-  html{
-    font-size: 16px;
-  }
-  
 }
